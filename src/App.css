@@ -8,7 +8,7 @@
   background: #e8e8e8;
   border-radius: 4px;
   max-width: 400px;
-  padding: 5px;
+  padding: 15px;
 }
 
 .todo {
@@ -21,4 +21,26 @@
   justify-content: space-between;
   margin-bottom: 6px;
   padding: 3px 10px;
+}
+.todoMainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.todoListTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  font-weight: bolder;
+}
+.todosIconContainer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.iconMarginContainer{
+  margin: 2px;
+  cursor: pointer;
 }

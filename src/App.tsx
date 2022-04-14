@@ -4,12 +4,7 @@ import Todos from "./components/todos/todos";
 import TodoForm from "./components/todoForm/todoForm";
 
 function App() {
-  const [todos, setTodos] = React.useState<any>([
-    {
-      text: "Todo items Example",
-      isCompleted: false,
-    },
-  ]);
+  const [todos, setTodos] = React.useState<any>([]);
   const addTodo = (text: any) => {
     const newTodos = [...todos, { text }];
     setTodos(newTodos);
@@ -17,7 +12,7 @@ function App() {
   const completeTodo = (index: any) => {
     const newTodos = [...todos];
     newTodos[index].isCompleted = true;
-    setTodos(newTodos)
+    setTodos(newTodos);
   };
   const removeTodo = (index: any) => {
     const newTods = [...todos];
@@ -26,19 +21,22 @@ function App() {
   };
   return (
     <div className="app">
-      <div className="todo-list">
-        <TodoForm addTodo={addTodo} />
-        {todos?.map((todo: any, index: any) => {
-          return (
-            <Todos
-              key={index}
-              todo={todo}
-              index={index}
-              completeTodo={completeTodo}
-              removeTodo={removeTodo}
-            />
-          );
-        })}
+      <div className="todoListTitle">TODO LIST</div>
+      <div className="todoMainContainer">
+        <div className="todo-list">
+          <TodoForm addTodo={addTodo} />
+          {todos?.map((todo: any, index: any) => {
+            return (
+              <Todos
+                key={index}
+                todo={todo}
+                index={index}
+                completeTodo={completeTodo}
+                removeTodo={removeTodo}
+              />
+            );
+          })}
+        </div>
       </div>
     </div>
   );
