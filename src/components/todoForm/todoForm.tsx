@@ -26,8 +26,8 @@ const TodoForm: FC<any> = (props: any) => {
         <Button
           variant="contained"
           type="submit"
-          endIcon={<AddBoxIcon />}
-          style={{ marginLeft: "4px" }}
+          startIcon={<AddBoxIcon />}
+          style={{ marginLeft: "4px",width:'70px' }}
         >
           Add
         </Button>
