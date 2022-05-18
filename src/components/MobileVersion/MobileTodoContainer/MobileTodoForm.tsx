@@ -1,15 +1,21 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import TextField from "@mui/material/TextField";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import Button from "@mui/material/Button";
+import { useDispatch, } from "react-redux";
+import { addTodo } from "../../reduxToolkit/todo/todoSlice";
 
-const TodoForm: FC<any> = (props: any) => {
-  const [value, setValue] = React.useState<any>("");
+export const MobileTodoForm: FC<any> = () => {
+  const dispatch = useDispatch();
+  const [value, setValue] = useState<string>("");
+  const [date, setDate] = useState<Date>(new Date());
+
   const handleSubmit = (e: any) => {
     e.preventDefault();
     if (!value) return;
-    props?.addTodo(value);
+    dispatch(addTodo({ value, date }));
     setValue("");
+    setDate(new Date());
   };
   return (
     <React.Fragment>
@@ -35,4 +41,3 @@ const TodoForm: FC<any> = (props: any) => {
     </React.Fragment>
   );
 };
-export default TodoForm;

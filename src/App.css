@@ -1,14 +1,10 @@
 .app {
   background: #209cee;
-  height: 100vh;
+  height: auto;
   padding: 15px;
 }
-
-.todo-list {
-  background: #e8e8e8;
-  border-radius: 4px;
-  max-width: 400px;
-  padding: 15px;
+body > #root > div {
+  height: 100vh;
 }
 
 .todo {
